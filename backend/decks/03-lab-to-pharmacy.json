@@ -1,0 +1,114 @@
+{
+  "id": "lab-to-pharmacy",
+  "title": "From Lab to Pharmacy",
+  "description": "How a new medicine goes from thousands of lab candidates to an approved treatment, and why it takes more than a decade.",
+  "category": "Life sciences",
+  "theme": "lagoon",
+  "minutes": 4,
+  "suggested_questions": [
+    "How long does it take to make a new drug?",
+    "What happens in a Phase 1 trial?",
+    "Why do most drug candidates fail?",
+    "How were COVID vaccines approved so fast?"
+  ],
+  "keyterms": [
+    "FDA",
+    "EMA",
+    "IND",
+    "NDA",
+    "BLA",
+    "preclinical",
+    "Phase 1",
+    "Phase 2",
+    "Phase 3",
+    "Phase 4",
+    "placebo",
+    "double-blind",
+    "randomized controlled trial",
+    "pharmacovigilance",
+    "fast track",
+    "breakthrough therapy",
+    "accelerated approval",
+    "PDUFA",
+    "mRNA"
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "kicker": "A 4-minute tour",
+      "title": "From Lab to Pharmacy",
+      "subtitle": "How a new medicine is discovered, tested and approved",
+      "notes": "Welcome the audience. This deck follows a new medicine from the lab bench to the pharmacy shelf: how candidates are found and tested in the lab, how clinical trials test them in people, why most of them fail, how regulators speed up urgent cases, and what happens after approval. The whole journey usually takes 10 to 15 years. Encourage questions at any time. The details mostly follow the U.S. process run by the Food and Drug Administration. This is general educational information, not medical advice."
+    },
+    {
+      "id": "journey",
+      "layout": "steps",
+      "kicker": "The journey",
+      "title": "A decade or more, in three stages",
+      "subtitle": "For every medicine that reaches patients, thousands of candidates are tested and dropped along the way.",
+      "items": [
+        { "icon": "flask", "title": "Discovery and preclinical", "body": "Thousands of molecules are screened, then the best are tested in cells and animals." },
+        { "icon": "users", "title": "Clinical trials", "body": "Three phases in people, from a few dozen volunteers to thousands of patients." },
+        { "icon": "file-check", "title": "Regulatory review", "body": "Regulators weigh all the evidence and decide whether the benefits outweigh the risks." }
+      ],
+      "footnote": "Typical timeline: 3 to 6 years in the lab, 6 to 7 years of trials, up to 2 years of review.",
+      "notes": "Developing a new medicine usually takes 10 to 15 years. It starts with discovery: scientists choose a biological target linked to a disease, such as a protein that drives a tumor's growth, then screen large libraries of compounds, often hundreds of thousands of them, with automated high-throughput screening. Medicinal chemists refine the most promising hits into lead candidates. In preclinical development, those candidates are tested in cells and in animals to learn how the body absorbs, processes and clears them, and whether they are safe enough to try in people. A widely cited industry illustration says that for every 5,000 to 10,000 compounds screened, about 250 reach preclinical testing, about 5 enter human trials and one is approved. Before the first human dose, a U.S. company files an Investigational New Drug application, or IND, with the FDA. After the trials it submits a New Drug Application, or a Biologics License Application for biologics such as antibodies and vaccines. Estimates of the average cost of bringing one new drug to market range from about one billion to 2.6 billion dollars, partly because they include the cost of all the candidates that fail along the way."
+    },
+    {
+      "id": "trials",
+      "layout": "cards",
+      "kicker": "Testing in people",
+      "title": "Clinical trials, phase by phase",
+      "items": [
+        { "icon": "shield-check", "title": "Phase 1", "body": "20 to 100 people, often healthy volunteers. Is it safe, and at what dose?" },
+        { "icon": "activity", "title": "Phase 2", "body": "Up to a few hundred patients. Does it work, and what are the side effects?" },
+        { "icon": "scale", "title": "Phase 3", "body": "300 to 3,000 patients, often more. Confirms the benefit and catches rarer side effects." }
+      ],
+      "footnote": "Phase 3 trials are usually randomized, and often double-blind: neither patients nor doctors know who gets the new drug.",
+      "notes": "Clinical trials test a candidate in people in three phases before approval. Phase 1 usually involves 20 to 100 people, often healthy volunteers, although cancer drugs are normally tested in patients. It lasts several months and asks whether the drug is safe, what dose to use and how the body handles it. Phase 2 enrolls up to several hundred people who have the condition and runs from several months to two years. It is the first real look at whether the drug works, and it keeps tracking side effects. Phase 3 enrolls roughly 300 to 3,000 patients, sometimes far more, over one to four years, to confirm the benefit and catch less common side effects. Most Phase 3 trials are randomized: patients are assigned by chance to the new drug or to a comparison, such as a placebo or the current standard treatment. Many are also double-blind, meaning neither the patients nor their doctors know who received what, so expectations cannot skew the results. Every trial needs participants' informed consent and approval from an ethics committee, called an institutional review board in the U.S., and most are registered publicly, for example on ClinicalTrials.gov."
+    },
+    {
+      "id": "odds",
+      "layout": "stat",
+      "kicker": "The odds",
+      "title": "Most candidates never make it",
+      "stat": { "value": "~8%", "label": "of drugs that enter human trials are eventually approved" },
+      "items": [
+        { "title": "Phase 1 → Phase 2", "value": "52%", "share": 0.52 },
+        { "title": "Phase 2 → Phase 3", "value": "29%", "share": 0.29 },
+        { "title": "Phase 3 → application", "value": "58%", "share": 0.58 },
+        { "title": "Application → approval", "value": "91%", "share": 0.91 }
+      ],
+      "footnote": "Share of candidates that pass each step, 2011 to 2020. Source: BIO, Informa Pharma Intelligence and QLS.",
+      "notes": "These numbers come from a large study of drug development success rates published in 2021 by the Biotechnology Innovation Organization, Informa Pharma Intelligence and QLS, covering thousands of drug programs from 2011 to 2020. About half of candidates make it from Phase 1 to Phase 2, but only about 29 percent get through Phase 2. That is the biggest hurdle, because it is the first real test of whether the drug works. About 58 percent of Phase 3 programs lead to an application, and about 91 percent of applications are approved. Multiply the steps together and only about 7.9 percent of drugs that enter Phase 1 reach approval, roughly one in thirteen. Other studies, using different periods and data, put the overall rate somewhat higher, at around 10 to 14 percent. Success varies a lot by disease: cancer drugs have among the lowest rates, around 5 percent, while drugs for blood disorders do best, at roughly one in four. Most late-stage failures happen because the drug does not work well enough; safety problems and business decisions explain most of the rest."
+    },
+    {
+      "id": "faster",
+      "layout": "bullets",
+      "kicker": "Speeding things up",
+      "title": "Faster paths for urgent needs",
+      "items": [
+        { "title": "Fast track", "body": "More contact with the FDA, and finished parts of the application can be reviewed early." },
+        { "title": "Breakthrough therapy", "body": "Intensive FDA guidance when early results beat existing treatments by a wide margin." },
+        { "title": "Accelerated approval", "body": "Approval on an early signal, like tumor shrinkage, while follow-up trials confirm the benefit." },
+        { "title": "Priority review", "body": "A six-month review goal instead of the standard ten months." }
+      ],
+      "callout": { "label": "Case study", "text": "COVID-19 vaccines reached emergency authorization about 11 months after the virus's genome was published." },
+      "notes": "Regulators have several ways to speed up promising drugs for serious conditions without lowering the bar for evidence. In the U.S., fast track designation brings more frequent meetings with the FDA and a rolling review, so finished sections of the application can be submitted early. Breakthrough therapy designation adds intensive guidance when early clinical evidence suggests a substantial improvement over available treatments. Accelerated approval allows approval based on a surrogate endpoint, an early measure such as tumor shrinkage that is reasonably likely to predict real benefit, provided confirmatory trials follow; if they fail, the approval can be withdrawn. Priority review sets a goal of six months for the FDA's decision instead of the standard ten. Europe has comparable tools, such as the PRIME scheme and conditional marketing authorization. COVID-19 vaccines show how fast things can move: the virus's genome was published in January 2020, and the Pfizer-BioNTech vaccine received emergency use authorization in December 2020, after a Phase 3 trial with more than 40,000 participants. Trial phases overlapped, manufacturing began at financial risk before results were in, and high infection rates produced answers quickly. The safety steps themselves were not skipped."
+    },
+    {
+      "id": "after-approval",
+      "layout": "closing",
+      "kicker": "After approval",
+      "title": "Approval is not the finish line",
+      "subtitle": "Thanks for listening. Ask me anything.",
+      "items": [
+        { "icon": "clipboard", "title": "Phase 4 studies", "body": "Post-approval studies follow larger, more varied groups for longer." },
+        { "icon": "stethoscope", "title": "Safety reporting", "body": "Doctors and patients report side effects, and warnings change as a result." },
+        { "icon": "brain", "title": "AI in discovery", "body": "Machine learning is helping find targets and design molecules faster." }
+      ],
+      "notes": "Approval is not the end of the journey. Most trials include a few thousand people at most, so side effects that affect one person in tens of thousands may only appear once millions take a drug. Regulators can require Phase 4 studies after approval to follow long-term safety and effectiveness in broader populations. Safety monitoring, known as pharmacovigilance, continues for as long as a drug is sold: in the U.S., doctors, patients and manufacturers report suspected side effects to the FDA, for example through its MedWatch program, and the agency can add warnings, restrict use or ask for a drug to be withdrawn. A well-known example is the painkiller rofecoxib, sold as Vioxx, which its maker withdrew worldwide in 2004 after a trial linked it to a higher risk of heart attacks and strokes. Looking ahead, artificial intelligence is helping researchers find new targets, predict protein structures and design candidate molecules, and several AI-discovered candidates have already entered clinical trials. They still have to pass the same trials and reviews as every other medicine. Close by thanking the audience and inviting questions."
+    }
+  ]
+}

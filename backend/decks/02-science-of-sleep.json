@@ -1,0 +1,107 @@
+{
+  "id": "science-of-sleep",
+  "title": "The Science of Sleep",
+  "description": "What your brain does after lights out, the two clocks that time it, and habits for sleeping better.",
+  "category": "Health & science",
+  "theme": "dawn",
+  "minutes": 4,
+  "suggested_questions": [
+    "Why does coffee keep me awake?",
+    "What happens during REM sleep?",
+    "How much sleep do teenagers need?",
+    "Can I catch up on sleep at the weekend?"
+  ],
+  "keyterms": [
+    "REM",
+    "non-REM",
+    "circadian rhythm",
+    "adenosine",
+    "melatonin",
+    "caffeine",
+    "CBT-I",
+    "glymphatic system",
+    "slow-wave sleep",
+    "insomnia",
+    "suprachiasmatic nucleus"
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "kicker": "A 4-minute tour",
+      "title": "The Science of Sleep",
+      "subtitle": "Why the third of your life spent asleep shapes the other two-thirds",
+      "notes": "Welcome the audience. This deck explores what happens in the brain and body during sleep: the stages of a night's sleep, the two systems that time it, what sleep does for memory and health, how much people need, and practical habits for sleeping better. Encourage questions at any time. This is general educational information, not medical advice."
+    },
+    {
+      "id": "cycles",
+      "layout": "steps",
+      "kicker": "Sleep architecture",
+      "title": "A night is a series of cycles",
+      "subtitle": "About every 90 minutes the brain moves through the same stages, four to six times a night.",
+      "items": [
+        { "icon": "moon", "title": "Light sleep", "body": "Stages N1 and N2. Breathing slows and sleep spindles help lock in memories." },
+        { "icon": "waves", "title": "Deep sleep", "body": "Slow-wave sleep, or N3. Physical repair, mostly early in the night." },
+        { "icon": "sparkles", "title": "REM sleep", "body": "Vivid dreams and emotional processing, mostly toward morning." }
+      ],
+      "footnote": "An average sleep cycle lasts about 90 minutes.",
+      "notes": "Sleep is not one state; it is a cycle that repeats through the night. Stage N1 is the brief transition from wakefulness and lasts a few minutes. Stage N2 is light sleep and makes up about half of a typical night; it features sleep spindles, bursts of brain activity linked to memory and to staying asleep despite noise. Stage N3, deep or slow-wave sleep, has large, slow brain waves; it is when people are hardest to wake, growth hormone is released, and the body does much of its physical restoration. Deep sleep is concentrated in the first half of the night. REM, short for rapid eye movement, is when most vivid dreaming happens; the brain is very active while most muscles are temporarily paralyzed so we do not act out our dreams. REM periods get longer toward morning, which is why cutting sleep short cuts REM disproportionately. A full cycle averages about 90 minutes, ranging roughly from 70 to 120, and repeats four to six times a night."
+    },
+    {
+      "id": "clocks",
+      "layout": "cards",
+      "kicker": "The timing system",
+      "title": "Two systems decide when you sleep",
+      "items": [
+        { "icon": "sun", "title": "Circadian rhythm", "body": "A roughly 24-hour internal clock, reset each day mainly by light." },
+        { "icon": "battery-low", "title": "Sleep pressure", "body": "Adenosine builds up while you are awake and makes you drowsy." },
+        { "icon": "coffee", "title": "Caffeine's trick", "body": "It blocks adenosine receptors, hiding sleep pressure rather than removing it." }
+      ],
+      "notes": "Two processes work together. The circadian rhythm is an internal clock of roughly 24 hours, run by a master clock in the hypothalamus called the suprachiasmatic nucleus. Light, especially morning daylight reaching the eyes, is its strongest time cue. In the evening, darkness lets the body release melatonin, which signals that it is night. The second process is sleep pressure, also called the homeostatic sleep drive: the longer you are awake, the more adenosine accumulates in the brain and the sleepier you feel, and sleep clears it. Caffeine blocks adenosine receptors, so you feel alert even though the pressure is still there, which is why people crash when it wears off. Caffeine's half-life averages around five hours and varies widely between people, so an afternoon coffee can still be active at bedtime. Jet lag and shift work disrupt sleep because they pull these two systems out of sync."
+    },
+    {
+      "id": "benefits",
+      "layout": "bullets",
+      "kicker": "The payoff",
+      "title": "Sleep is maintenance, not downtime",
+      "items": [
+        { "title": "Memory", "body": "The brain replays and strengthens what you learned during the day." },
+        { "title": "Clean-up", "body": "Fluid flow through the brain increases, helping clear waste products." },
+        { "title": "Mood", "body": "REM sleep helps take the emotional edge off difficult experiences." },
+        { "title": "Body", "body": "Immune defenses, appetite hormones and blood sugar control all depend on it." }
+      ],
+      "callout": { "label": "Did you know?", "text": "After 17 to 19 hours awake, some reaction-time tests look like a 0.05% blood alcohol level." },
+      "notes": "Sleep is an active process. For memory, the brain replays and consolidates the day's learning; deep sleep is linked with strengthening facts and events, and REM with skills, creativity and emotional memories. Research in mice published in 2013 (Xie and colleagues, in Science) found that the space between brain cells expands during sleep, increasing the flow of cerebrospinal fluid that helps clear waste products such as beta-amyloid; this so-called glymphatic system is still being studied in humans. REM sleep appears to help process emotional experiences, and sleep loss makes people more emotionally reactive. For the body, sleep supports immune function, and short sleep disrupts appetite hormones such as leptin and ghrelin and impairs blood sugar control. A well-known 2000 study (Williamson and Feyer) found that after 17 to 19 hours without sleep, performance on some tests was equivalent to or worse than at a blood alcohol concentration of 0.05 percent."
+    },
+    {
+      "id": "how-much",
+      "layout": "stat",
+      "kicker": "The numbers",
+      "title": "How much sleep do you need?",
+      "stat": { "value": "7–9 h", "label": "recommended for most adults, every night" },
+      "items": [
+        { "title": "School-age children (6–12)", "value": "9–12 h", "share": 1.0 },
+        { "title": "Teenagers (13–18)", "value": "8–10 h", "share": 0.83 },
+        { "title": "Adults", "value": "7–9 h", "share": 0.75 },
+        { "title": "Older adults (65+)", "value": "7–8 h", "share": 0.67 }
+      ],
+      "footnote": "About 1 in 3 U.S. adults doesn't get enough sleep, according to the CDC.",
+      "notes": "Recommendations from sleep medicine bodies such as the American Academy of Sleep Medicine and the National Sleep Foundation are broadly consistent: adults need about seven to nine hours a night, adults over 65 about seven to eight, teenagers eight to ten, and school-age children nine to twelve. Needs vary between individuals, but very few people do well on less than six hours. According to the U.S. Centers for Disease Control and Prevention, about one in three adults does not get enough sleep. Regularly sleeping less than seven hours is associated with higher risks of weight gain, type 2 diabetes, high blood pressure and heart disease, depression, and accidents. Sleeping in at the weekend helps a little but does not fully undo a week of short sleep, and irregular schedules disrupt the body clock, so consistency matters. Teenagers have a biological shift toward later sleep times, which is why early school start times are often debated."
+    },
+    {
+      "id": "habits",
+      "layout": "closing",
+      "kicker": "Takeaways",
+      "title": "Five habits for better sleep",
+      "subtitle": "Sweet dreams. Ask me anything.",
+      "items": [
+        { "icon": "clock", "title": "Keep a schedule", "body": "Same wake-up time every day, weekends included." },
+        { "icon": "sun", "title": "Get morning light", "body": "Time outdoors early in the day anchors your body clock." },
+        { "icon": "coffee", "title": "Time your caffeine", "body": "Skip it in the eight hours before bed." },
+        { "icon": "thermometer", "title": "Cool, dark, quiet", "body": "Around 18 °C (65 °F) suits most people." },
+        { "icon": "smartphone", "title": "Wind down", "body": "Dim the lights and screens in the last hour." }
+      ],
+      "notes": "Practical sleep habits backed by research: keep a consistent wake-up time, even at weekends, because regularity strengthens the circadian rhythm. Get bright light early in the day, ideally daylight outdoors; even on cloudy days outdoor light is far brighter than indoor lighting. Avoid caffeine in the roughly eight hours before bed, and know that alcohol, although it can make people drowsy, fragments sleep and suppresses REM later in the night. Keep the bedroom cool, around 18 degrees Celsius or 65 Fahrenheit, as well as dark and quiet. In the last hour, dim the lights and step away from bright screens and stimulating content. If you cannot fall asleep after about 20 minutes, get up and do something calm in dim light until you feel sleepy. For persistent insomnia, cognitive behavioral therapy for insomnia, known as CBT-I, is the recommended first-line treatment, and anyone with ongoing sleep problems, loud snoring or heavy daytime sleepiness should talk to a doctor. Close by thanking the audience and inviting questions."
+    }
+  ]
+}

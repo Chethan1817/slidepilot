@@ -1,0 +1,28 @@
+[project]
+name = "slidepilot-backend"
+version = "0.1.0"
+description = "Slidepilot backend: LiveKit voice presenter agent + FastAPI session/deck API"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "livekit-agents~=1.8",
+    "livekit-plugins-anthropic~=1.8",
+    "livekit-api",
+    "fastapi",
+    "uvicorn[standard]",
+    "python-dotenv",
+    "pydantic>=2",
+    "livekit-plugins-openai~=1.8",
+    "livekit-plugins-deepgram~=1.8",
+    "livekit-plugins-elevenlabs~=1.8",
+    "livekit-plugins-google~=1.8",
+    "langgraph>=1.2.12",
+    "langchain-openai>=1.6.7",
+]
+
+[dependency-groups]
+dev = ["pytest", "httpx2", "pytest-asyncio"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["."]
+asyncio_mode = "auto"

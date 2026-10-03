@@ -1,0 +1,63 @@
+import {
+  Activity,
+  AudioLines,
+  BatteryLow,
+  Brain,
+  ClipboardList,
+  Clock,
+  Coffee,
+  FileCheck2,
+  FlaskConical,
+  GraduationCap,
+  Hand,
+  Headphones,
+  HeartPulse,
+  MessageCircle,
+  Mic,
+  Moon,
+  Scale,
+  ShieldCheck,
+  Smartphone,
+  Sparkles,
+  Stethoscope,
+  Sun,
+  Thermometer,
+  Users,
+  WavesHorizontal,
+  type LucideIcon,
+  type LucideProps,
+} from 'lucide-react'
+
+// Icon names used by deck JSON files.
+const ICONS: Record<string, LucideIcon> = {
+  activity: Activity,
+  'audio-lines': AudioLines,
+  'battery-low': BatteryLow,
+  brain: Brain,
+  clipboard: ClipboardList,
+  clock: Clock,
+  coffee: Coffee,
+  'file-check': FileCheck2,
+  flask: FlaskConical,
+  'graduation-cap': GraduationCap,
+  hand: Hand,
+  headphones: Headphones,
+  'heart-pulse': HeartPulse,
+  'message-circle': MessageCircle,
+  mic: Mic,
+  moon: Moon,
+  scale: Scale,
+  'shield-check': ShieldCheck,
+  smartphone: Smartphone,
+  sparkles: Sparkles,
+  stethoscope: Stethoscope,
+  sun: Sun,
+  thermometer: Thermometer,
+  users: Users,
+  waves: WavesHorizontal,
+}
+
+export function DeckIcon({ icon, ...props }: { icon: string | null } & Omit<LucideProps, 'name'>) {
+  const Component = (icon && ICONS[icon]) || Sparkles
+  return <Component strokeWidth={1.75} {...props} />
+}

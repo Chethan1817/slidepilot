@@ -1,0 +1,111 @@
+{
+  "id": "voice-ai-agents",
+  "title": "Inside a Voice AI Agent",
+  "description": "How real-time voice agents listen, think and talk back, and why 800 milliseconds matters.",
+  "category": "Technology",
+  "theme": "aurora",
+  "minutes": 4,
+  "suggested_questions": [
+    "How fast does a voice agent need to respond?",
+    "What happens when I interrupt you?",
+    "How do you know which slide to show?",
+    "Where is voice AI used in healthcare?"
+  ],
+  "keyterms": [
+    "VAD",
+    "voice activity detection",
+    "turn detection",
+    "turn detector",
+    "endpointing",
+    "barge-in",
+    "STT",
+    "speech-to-text",
+    "TTS",
+    "text-to-speech",
+    "LLM",
+    "speech-to-speech",
+    "WebRTC",
+    "LiveKit",
+    "function calling",
+    "latency"
+  ],
+  "slides": [
+    {
+      "id": "cover",
+      "layout": "cover",
+      "kicker": "A 4-minute tour",
+      "title": "Inside a Voice AI Agent",
+      "subtitle": "How software learned to listen, think and talk back in real time",
+      "notes": "Welcome the audience. This deck explains how a real-time voice agent works, using this very presentation as the live example: the audience is talking to one right now. The tour covers the speech pipeline, the latency budget, turn-taking and interruptions, tool use, and where voice AI is heading. Encourage the audience to interrupt with questions at any time."
+    },
+    {
+      "id": "pipeline",
+      "layout": "steps",
+      "kicker": "How it works",
+      "title": "Three models, one conversation",
+      "subtitle": "Every stage streams, so the next one starts before the last one finishes.",
+      "items": [
+        { "icon": "mic", "title": "Speech-to-text", "body": "Streams your audio into words while you are still talking." },
+        { "icon": "brain", "title": "Language model", "body": "Reads the conversation and decides what to say, or what to do." },
+        { "icon": "audio-lines", "title": "Text-to-speech", "body": "Turns the reply into natural speech, sentence by sentence." }
+      ],
+      "footnote": "Audio travels over WebRTC, the same low-latency transport used for video calls.",
+      "notes": "A voice agent is usually a pipeline of three models. First, voice activity detection notices that someone is speaking, and a streaming speech-to-text model transcribes the audio while the person is still talking, producing partial transcripts that get refined as more audio arrives. Second, a large language model reads the conversation so far plus its instructions and streams back a reply token by token; it can also decide to call tools. Third, a text-to-speech model starts synthesizing audio as soon as the first sentence of the reply is ready instead of waiting for the full response. Because every stage streams, the delays overlap instead of adding up. Audio moves between the browser and the agent over WebRTC, the protocol behind video calls, through a media server such as LiveKit. An alternative design uses a single speech-to-speech model that takes audio in and produces audio out directly; it can be faster and more expressive, but the pipeline gives more control, lets you choose the best model for each stage, and produces text you can inspect. This presentation runs on the pipeline approach."
+    },
+    {
+      "id": "latency",
+      "layout": "stat",
+      "kicker": "Why speed matters",
+      "title": "The 800 ms budget",
+      "stat": { "value": "~800 ms", "label": "from the moment you stop talking to the first word back" },
+      "items": [
+        { "title": "End-of-turn detection", "value": "~300 ms", "share": 0.35 },
+        { "title": "Language model, first token", "value": "~300 ms", "share": 0.35 },
+        { "title": "Speech synthesis, first audio", "value": "~150 ms", "share": 0.18 },
+        { "title": "Network round trips", "value": "~100 ms", "share": 0.12 }
+      ],
+      "footnote": "In human conversation, the typical gap between turns is only about 200 ms.",
+      "notes": "Latency is the biggest single factor in whether a voice agent feels natural. Research on conversations across ten languages (Stivers and colleagues, 2009) found that the typical gap between one person finishing and the other starting is around 200 milliseconds. Voice agents cannot quite match that yet, but staying under roughly 800 milliseconds end to end feels responsive, while delays beyond about a second and a half feel broken and make people talk over the agent. The budget on this slide is an illustrative breakdown, not a measurement: deciding that the user has finished their turn takes a few hundred milliseconds, the language model needs time to produce its first token, the speech model needs time to produce its first audio, and the network adds round trips. Teams win back time by streaming every stage, starting the language model speculatively before the turn is confirmed (preemptive generation), keeping prompts short, choosing fast models, and running servers close to users. This app shows its measured response time in the presenter panel after each reply."
+    },
+    {
+      "id": "turn-taking",
+      "layout": "cards",
+      "kicker": "Turn-taking",
+      "title": "Knowing when to talk, and when to stop",
+      "items": [
+        { "icon": "activity", "title": "Voice activity detection", "body": "Spots speech in the audio stream, frame by frame." },
+        { "icon": "message-circle", "title": "Turn detection", "body": "Predicts whether you have finished your thought or are just pausing." },
+        { "icon": "hand", "title": "Barge-in", "body": "When you interrupt, the agent stops at once and listens." }
+      ],
+      "footnote": "Try it: start talking while I'm speaking.",
+      "notes": "Conversation is a dance of turn-taking, and it is one of the hardest parts of voice AI. Voice activity detection is a small, fast model that classifies short frames of audio as speech or non-speech. But silence alone is a poor signal: people pause mid-sentence to think, so waiting for silence either cuts them off or adds lag. Modern turn detectors also look at what was said, using a model trained to predict whether the utterance is complete. Interruptions, also called barge-in, are the other half: when the user starts talking over the agent, the agent must stop its audio immediately, discard the words that were never played, and update its memory so it only remembers what the user actually heard. It also has to ignore false alarms such as a cough, background noise or a quick 'mm-hmm', and resume speaking if nothing meaningful was said. Echo cancellation in the browser stops the agent from hearing, and interrupting, itself. The audience can test this live by talking while the presenter is speaking."
+    },
+    {
+      "id": "tools",
+      "layout": "bullets",
+      "kicker": "Tool use",
+      "title": "From talking to doing",
+      "subtitle": "Function calling lets the model trigger real actions mid-conversation.",
+      "items": [
+        { "title": "The model decides", "body": "It chooses when a tool would help and fills in the arguments." },
+        { "title": "Your code acts", "body": "Look up an order, book a slot, query a database, or change a slide." },
+        { "title": "The agent follows up", "body": "The result flows back, so the reply uses fresh context." }
+      ],
+      "callout": { "label": "Live in this demo", "text": "show_slide(slide_number=4)" },
+      "notes": "Tool use, also called function calling, turns a voice agent from a talker into a doer. Developers describe functions to the model with a name, a description and typed parameters. During the conversation the model decides when one of those functions would help and emits a structured call with arguments. The application runs the function, sends the result back, and the model continues its reply with the new information. That is how voice agents check order status, book appointments, search knowledge bases or hand a call over to a human. In this app, when the audience asks a question that another slide answers better, the presenter calls a show_slide tool; the agent publishes the new slide to the browser over LiveKit and the page animates to it. Because tools run while the user is waiting, they need to be fast, and agents often say a short phrase like 'let me check' to cover the gap."
+    },
+    {
+      "id": "future",
+      "layout": "closing",
+      "kicker": "What's next",
+      "title": "Where voice AI is headed",
+      "subtitle": "Thanks for listening. Ask me anything.",
+      "items": [
+        { "icon": "heart-pulse", "title": "Healthcare", "body": "Patient intake, follow-ups and medical information lines." },
+        { "icon": "headphones", "title": "Customer support", "body": "Round-the-clock answers with a smooth handoff to humans." },
+        { "icon": "graduation-cap", "title": "Learning", "body": "Tutors and role-play partners that adapt as you speak." }
+      ],
+      "notes": "Voice is becoming a primary interface for software. In healthcare and life sciences, agents handle patient intake, appointment reminders and follow-ups, and answer questions on medical information lines, with humans in the loop for anything clinical. In customer support, they resolve routine requests around the clock and hand complex cases to people with full context. In education and training, they act as patient tutors and role-play partners, for example for sales or clinical conversations. Technically, the field is moving toward speech-to-speech models that keep tone and emotion, turn-taking that handles backchannels like 'uh-huh', more expressive voices, and running more of the stack on device for privacy and speed. The big open challenges are reliability, latency on complex tasks, and trust: agents need to be accurate, transparent that they are AI, and safe in high-stakes domains. Close by thanking the audience and inviting questions."
+    }
+  ]
+}
